@@ -1,0 +1,64 @@
+\documentclass{standalone}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+\node[inner sep=0pt,rotate=-60] (one-branch) at (-.32\textwidth,.005\textwidth) {
+  \def\svgwidth{.3\textwidth}
+  \input{MusicBrainz_logo_no_text.pdf_tex}
+};
+\node[inner sep=0pt,rotate=180] (one-top) at (0,0) {
+  \def\svgwidth{.3\textwidth}
+  \input{CoverArtArchive_logo_no_text.pdf_tex}
+};
+\node[inner sep=0pt] (one-trunk) at (-.165\textwidth,-.27\textwidth) {
+  \def\svgwidth{.3\textwidth}
+  \input{AcousticBrainz_logo_no_text.pdf_tex}
+};
+\node[inner sep=0pt,rotate=180] (one-root) at (0,-.54\textwidth) {
+  \def\svgwidth{.3\textwidth}
+  \input{ListenBrainz_logo_no_text.pdf_tex}
+};
+
+\begin{scope}[rotate=-30,xshift=.295\textwidth,yshift=.165\textwidth]
+
+\node[inner sep=0pt,rotate=90] (seven-branch) at (.155\textwidth,-.275\textwidth) {
+  \def\svgwidth{.3\textwidth}
+  \input{Picard_logo_no_text.pdf_tex}
+};
+\node[inner sep=0pt,rotate=-90] (seven-top) at (.305\textwidth,.005\textwidth) {
+  \def\svgwidth{.3\textwidth}
+  \input{CritiqueBrainz_logo_no_text.pdf_tex}
+};
+\node[inner sep=0pt,rotate=150] (seven-trunk) at (.47\textwidth,-.27\textwidth) {
+  \def\svgwidth{.3\textwidth}
+  \input{BookBrainz_logo_no_text.pdf_tex}
+};
+\node[inner sep=0pt,rotate=-30] (seven-root) at (.305\textwidth,-.54\textwidth) {
+  \def\svgwidth{.3\textwidth}
+  \input{MessyBrainz_logo_no_text.pdf_tex}
+};
+
+\end{scope}
+
+\ifdefined\seventeenalone\else
+  \node[inner sep=0pt,rotate=75] (sliver) at (.065\textwidth,-.96\textwidth) {
+    \def\svgwidth{.3\textwidth}
+    \ifdefined\seventeenatoffice
+      \input{OfficeBrainz_logo_no_text.pdf_tex}
+    \else\ifdefined\seventeenmourningbrainz
+      \input{OfficeMourningBrainz_logo_no_text.pdf_tex}
+    \else\ifdefined\seventeenmourningoffice
+      \input{MourningOfficeBrainz_logo_no_text.pdf_tex}
+    \fi\fi\fi
+  };
+\fi
+
+\end{tikzpicture}
+
+\end{document}
+
